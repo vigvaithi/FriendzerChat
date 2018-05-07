@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="in.makers.chat.Friendzer">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name="in.makers.chat.Friendzer.FriendzerChat"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="FriendzerChat"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <service android:name="in.makers.chat.Friendzer.FirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity android:name="in.makers.chat.Friendzer.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="in.makers.chat.Friendzer.StartActivity" />
+        <activity
+            android:name="in.makers.chat.Friendzer.RegisterActivity"
+            android:parentActivityName="in.makers.chat.Friendzer.StartActivity" />
+        <activity
+            android:name="in.makers.chat.Friendzer.LoginActivity"
+            android:parentActivityName="in.makers.chat.Friendzer.StartActivity" />
+        <activity android:name="in.makers.chat.Friendzer.SettingsActivity" />
+        <activity
+            android:name="in.makers.chat.Friendzer.StatusActivity"
+            android:parentActivityName="in.makers.chat.Friendzer.SettingsActivity" />
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
+        <activity
+            android:name="in.makers.chat.Friendzer.UsersActivity"
+            android:parentActivityName="in.makers.chat.Friendzer.MainActivity" />
+        <activity android:name="in.makers.chat.Friendzer.ProfileActivity">
+            <intent-filter>
+                <action android:name="in.makers.chat.Friendzer_TARGET_NOTIFICATION" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="in.makers.chat.Friendzer.ChatActivity"
+            android:parentActivityName="in.makers.chat.Friendzer.MainActivity"></activity>
+    </application>
+
+</manifest>
